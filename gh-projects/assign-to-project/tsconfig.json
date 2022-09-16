@@ -31,5 +31,6 @@
     }
   },
   "include": ["./src"],
+  "exclude": ["./*.ts"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
