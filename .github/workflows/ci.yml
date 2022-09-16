@@ -3,6 +3,9 @@ name: "CI"
 on:
   pull_request:
     types: [opened, synchronize, edited, closed]
+  push:
+    branches:
+      - master
 
 jobs:
   cancel-previous-run:
