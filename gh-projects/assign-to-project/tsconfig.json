@@ -1,14 +1,35 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "target": "es2020",
-      "module": "commonjs",
-      "strict": true,
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
-    },
-    "$schema": "https://json.schemastore.org/tsconfig"
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowJs": false,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "noEmitOnError": true,
+    "noErrorTruncation": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "target": "es2015",
+    "declaration": false,
+    "sourceMap": false,
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["./src"],
+  "$schema": "https://json.schemastore.org/tsconfig"
 }

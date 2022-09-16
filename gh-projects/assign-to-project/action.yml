@@ -45,12 +45,6 @@ runs:
       shell: bash
       env:
         TOKEN: ${{ steps.generate_token.outputs.token }}
-        ORGANIZATION: ${{ inputs.organization }}
-        PROJECT_NUMBER: ${{ inputs.project_number }}
-        OBJECT_ID: ${{ inputs.object_id }}
-        PROJECT_FIELDS: ${{ inputs.fields }}
-        PROJECT_VALUES: ${{ inputs.values }}
       run: |
         cd ${{ github.action_path }}
-        npm install 
-        npm run assign-project
+        npm run assign:project

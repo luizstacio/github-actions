@@ -1,19 +1,10 @@
-import { graphql } from "@octokit/graphql";
-import {
-  AddProjectV2ItemByIdPayload,
-  ProjectV2,
-} from "@octokit/graphql-schema";
-import { transformQuery } from "../utils/field";
-import { headers } from "../utils/headers";
+import { graphql } from '@octokit/graphql';
+import { ProjectV2 } from '@octokit/graphql-schema';
+import { transformQuery } from '~/utils/field';
+import { headers } from '~/utils/headers';
 
-export async function updateFields(
-  project: ProjectV2,
-  itemId: string,
-  fields: any
-) {
-  const { addProjectV2ItemById } = await graphql<{
-    addProjectV2ItemById: AddProjectV2ItemByIdPayload;
-  }>(
+export async function updateFields(project: ProjectV2, itemId: string, fields: any) {
+  await graphql(
     `
     mutation (
       $projectId: ID!
@@ -37,8 +28,7 @@ export async function updateFields(
     {
       projectId: project.id,
       itemId,
-      headers,
+      headers: headers(),
     }
   );
-  return addProjectV2ItemById;
 }
