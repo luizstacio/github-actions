@@ -30,7 +30,10 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["./src"],
+  "include": [
+    "./node_modules/**/*",
+    "./src/**/*"
+  ],
   "exclude": ["./*.ts"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
