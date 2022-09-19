@@ -1,4 +1,4 @@
-name: "CI"
+name: "CI assign project"
 
 on:
   pull_request:
@@ -17,9 +17,26 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  assign-project-changed:
+    name: Assign project changed
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.changed-assign-project.outputs.any_changed }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Change assign project
+        id: changed-assign-project
+        uses: tj-actions/changed-files@v22.2
+        with:
+          files: |
+            **/gh-projects/assign-to-project/**/*
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    # Avoid running this if no files under assign-to-project was changed
+    needs: assign-project-changed
+    if: ${{ jobs.assign-project-changed.outputs.changed != 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/setup-node
@@ -29,8 +46,11 @@ jobs:
         working-directory: ./gh-projects/assign-to-project
 
   build:
+    name: Build
     runs-on: ubuntu-latest
-
+    # Avoid running this if no files under assign-to-project was changed
+    needs: assign-project-changed
+    if: ${{ jobs.assign-project-changed.outputs.changed != 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/setup-node
