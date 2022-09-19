@@ -18,7 +18,7 @@ const addProjectQuerySpec: [string, RequestParameters] = [
   {
     projectId: 'PVT_0000',
     contentId: 'objectId',
-    headers: { authorization: 'token TOKEN_INJECTED' },
+    headers: { authorization: 'token my_token_secret' },
   },
 ];
 
@@ -73,15 +73,12 @@ const updateProjectQuerySpec: [string, RequestParameters] = [
   {
     projectId: 'PVT_0000',
     itemId: 'TEST_RETURN_ID',
-    headers: { authorization: 'token TOKEN_INJECTED' },
+    headers: { authorization: 'token my_token_secret' },
   },
 ];
 
 describe('Assign project test', () => {
   it('test it', async () => {
-    // Inject token
-    process.env.TOKEN = 'TOKEN_INJECTED';
-
     jest
       .spyOn(octokitGraphql, 'graphql')
       .mockImplementation((query: string, options?: RequestParameters) => {

@@ -5,11 +5,10 @@ describe('Inputs utils testing', () => {
     const assignProjectInput = getAssignProjectsInput();
 
     expect(assignProjectInput).toEqual({
-      appId: 'testAppId',
-      privateKey: 'testPrivateKey',
       organization: 'testFooOrg',
       projectNumber: 'number123',
       objectId: 'objectId',
+      token: "my_token_secret",
       fields: {
         Status: 'In Progress',
         'Number field': '1',

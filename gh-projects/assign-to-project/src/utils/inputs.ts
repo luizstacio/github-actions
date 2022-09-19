@@ -1,8 +1,7 @@
 import * as core from '@actions/core';
 
 export interface AssignProjectInput {
-  appId: string;
-  privateKey: string;
+  token: string;
   organization: string;
   projectNumber: string;
   objectId: string;
@@ -30,21 +29,19 @@ export function fromGHInput(
 }
 
 export function getAssignProjectsInput(): AssignProjectInput {
-  const appId = core.getInput('app_id');
-  const privateKey = core.getInput('private_key');
   const organization = core.getInput('organization');
   const projectNumber = core.getInput('project_number');
   const objectId = core.getInput('object_id');
   const fieldsString = core.getInput('fields');
   const valuesString = core.getInput('values');
+  const token = core.getInput('token');
   const fields = fromGHInput(fieldsString, valuesString);
 
   return {
-    appId,
-    privateKey,
     organization,
     projectNumber,
     objectId,
     fields,
+    token,
   };
 }

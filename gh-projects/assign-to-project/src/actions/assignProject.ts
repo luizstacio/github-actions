@@ -1,8 +1,11 @@
 import { assignProject, getProject, updateFields } from '~/services';
-import { getAssignProjectsInput } from '~/utils';
+import { TOKEN_CONFIG, getAssignProjectsInput } from '~/utils';
 
 export async function assignProjectAction() {
-  const { projectNumber, organization, objectId, fields } = getAssignProjectsInput();
+  const { projectNumber, organization, token, objectId, fields } = getAssignProjectsInput();
+
+  // inject token data
+  TOKEN_CONFIG.token = token;
 
   console.log('Fetching project', projectNumber, 'from', organization);
   const project = await getProject(organization, projectNumber);
