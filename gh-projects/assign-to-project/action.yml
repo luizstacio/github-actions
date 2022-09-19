@@ -4,7 +4,7 @@ author: 'FuelLabs'
 
 runs:
   using: 'node16'
-  main: 'gh-projects/assign-to-project/dist/main.js'
+  main: 'dist/main.js'
 
 inputs:
   token:
