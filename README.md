@@ -2,7 +2,7 @@
 
 Repoistory to host all of Fuel's reusable workflows
 
-## Group of Actionss
+## Group of Actions
 
 | Group                         | Description                                                  |
 | ----------------------------- | ------------------------------------------------------------ |
