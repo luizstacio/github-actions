@@ -7,6 +7,8 @@ export default defineConfig(() => {
     outDir: 'dist',
     splitting: false,
     sourcemap: false,
+    externals: [],
     noExternal: [/(.*)/gi],
+    skipNodeModulesBundle: false,
   };
 });
