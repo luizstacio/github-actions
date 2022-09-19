@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     # Avoid running this if no files under assign-to-project was changed
     needs: assign-project-changed
-    if: ${{ needs.assign-project-changed.outputs.changed != 'true' }}
+    if: ${{ needs.assign-project-changed.outputs.changed == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/setup-node
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     # Avoid running this if no files under assign-to-project was changed
     needs: assign-project-changed
-    if: ${{ needs.assign-project-changed.outputs.changed != 'true' }}
+    if: ${{ needs.assign-project-changed.outputs.changed == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/setup-node
