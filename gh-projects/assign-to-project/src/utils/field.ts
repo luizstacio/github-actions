@@ -5,7 +5,9 @@ import {
   ProjectV2SingleSelectField,
 } from '@octokit/graphql-schema';
 
-const FieldTypeName: any = {
+const FieldTypeName: {
+  [key: string]: string;
+} = {
   SINGLE_SELECT: 'singleSelectOptionId',
   DATE: 'date',
   TEXT: 'text',

@@ -22,5 +22,7 @@ beforeAll(() => {
         return '';
     }
   });
-  jest.spyOn(getProject, 'getProject').mockImplementation(async () => getProjectJSON as any);
+  jest
+    .spyOn(getProject, 'getProject')
+    .mockImplementation(() => Promise.resolve(getProjectJSON as any));
 });

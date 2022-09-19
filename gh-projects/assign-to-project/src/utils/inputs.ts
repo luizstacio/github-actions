@@ -10,12 +10,11 @@ export interface AssignProjectInput {
   };
 }
 
-export function fromGHInput(
-  keys: string,
-  values: string
-): {
+export type GHInput = {
   [key: string]: string;
-} {
+};
+
+export function fromGHInput(keys: string, values: string): GHInput {
   const fields = keys.split(',');
   const fieldValues = values.split(',');
 

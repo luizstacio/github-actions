@@ -37,7 +37,7 @@ const updateProjectQuerySpec: [string, RequestParameters] = [
             projectV2Item {
                 id
             }
-        },
+        }
         arg_1: updateProjectV2ItemFieldValue(input: {
             projectId: $projectId
             itemId: $itemId
@@ -47,7 +47,7 @@ const updateProjectQuerySpec: [string, RequestParameters] = [
             projectV2Item {
                 id
             }
-        },
+        }
         arg_2: updateProjectV2ItemFieldValue(input: {
             projectId: $projectId
             itemId: $itemId
@@ -57,7 +57,7 @@ const updateProjectQuerySpec: [string, RequestParameters] = [
             projectV2Item {
                 id
             }
-        },
+        }
         arg_3: updateProjectV2ItemFieldValue(input: {
             projectId: $projectId
             itemId: $itemId

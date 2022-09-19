@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
-    "allowJs": false,
-    "checkJs": false,
+    "rootDir": "./",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
@@ -25,15 +23,10 @@
     "target": "es2015",
     "declaration": false,
     "sourceMap": false,
-    "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
       "~/*": ["./src/*"]
     }
   },
-  "include": [
-    "./node_modules/**/*",
-    "./src/**/*"
-  ],
-  "exclude": ["./*.ts"],
+  "include": ["./node_modules/**/*", "./src/**/*"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }

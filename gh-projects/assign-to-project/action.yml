@@ -1,10 +1,10 @@
 name: Assign to project
 description: Assign issues or pull requests to a project with custom fields.
-author: 'FuelLabs'
+author: "FuelLabs"
 
 runs:
-  using: 'node16'
-  main: 'dist/main.js'
+  using: "node16"
+  main: "dist/main.js"
 
 inputs:
   token:

@@ -1,14 +1,14 @@
 import { getAssignProjectsInput } from './inputs';
 
 describe('Inputs utils testing', () => {
-  it('getAssignProjectsInput', async () => {
+  it('getAssignProjectsInput', () => {
     const assignProjectInput = getAssignProjectsInput();
 
     expect(assignProjectInput).toEqual({
       organization: 'testFooOrg',
       projectNumber: 'number123',
       objectId: 'objectId',
-      token: "my_token_secret",
+      token: 'my_token_secret',
       fields: {
         Status: 'In Progress',
         'Number field': '1',
